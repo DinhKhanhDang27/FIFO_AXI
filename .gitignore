@@ -1,0 +1,59 @@
+# OS/editor noise
+.DS_Store
+Thumbs.db
+*~
+*.swp
+*.swo
+.vscode/
+.idea/
+
+# Logs and temporary files
+*.log
+*.jou
+*.pb
+*.wdb
+*.wcfg
+*.tmp
+*.bak
+*.backup
+
+# Simulation/build outputs
+*.vcd
+*.fst
+*.fsdb
+*.saif
+*.ucdb
+*.cov
+*.covdb/
+work/
+transcript
+xsim.dir/
+xsim.covdb/
+
+# Vivado generated project outputs
+*.cache/
+*.hw/
+*.ip_user_files/
+*.runs/
+*.sim/
+*.str
+*.xpr.user
+*.os
+*.dmp
+
+# Vivado IP/generated products
+*.dcp
+*.vds
+*.wdf
+*.rpt
+*.xml
+*.html
+*.xci.bak
+component.xml
+
+# Keep source project files and testbench code tracked:
+# - tb/**/*.sv
+# - vivado_dv/**/*.xpr
+# - vivado_dv/**/*.xci
+# - vivado_dv/**/*.xdc
+# - docs/spec PDFs and markdown
