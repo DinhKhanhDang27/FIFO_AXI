@@ -66,5 +66,7 @@ class axi_slv_reg_inv_seq extends fifo_base_seq;
   task body();
     axi_read(32'h0000_0ffc);
     axi_write(32'h0000_0ffc, 32'hdead_beef);
+    axi_read(fifo_reg_model::TDFR);
+    axi_write(fifo_reg_model::TDFV, 32'hdead_dead);
   endtask
 endclass

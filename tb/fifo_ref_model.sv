@@ -30,14 +30,14 @@ class fifo_ref_model extends uvm_component;
       exp.check_data = 0;
       exp.rdata = '0;
     end else if (tr.kind == fifo_item::WRITE) begin
-      exp.resp = regs.is_writable(tr.addr) ? 2'b00 : 2'b10;
+      exp.resp = (regs.is_writable(tr.addr) || tr.addr == fifo_reg_model::TDFV) ? 2'b00 : 2'b10;
       if (exp.resp == 2'b00 && tr.addr == fifo_reg_model::IER)
         mirror[tr.addr] = tr.data;
     end else begin
       if (tr.addr == fifo_reg_model::RLR)
         exp.resp = 2'b10;
       else
-        exp.resp = regs.is_readable(tr.addr) ? 2'b00 : 2'b10;
+        exp.resp = (regs.is_readable(tr.addr) || tr.addr == fifo_reg_model::TDFR) ? 2'b00 : 2'b10;
       exp.check_data = mirror.exists(tr.addr);
       exp.rdata = exp.check_data ? mirror[tr.addr] : '0;
     end
